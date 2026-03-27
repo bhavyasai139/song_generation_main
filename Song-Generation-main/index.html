@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Genre Classifier</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- <p id="temppara">hello1</p> -->
+    <div class="container" id="content">
+      <div class="video-container">
+        <video autoplay muted loop playsinline id="videoid">
+          <source src="/robo_videos/robo-walking-in.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <!-- <img src="/robo/robo1.png"/> -->
+      </div>
+      <div class="container1">
+        <h1></h1>
+        <h2></h2>
+        <!-- <h2></h2> -->
+
+        <!-- File Upload Input -->
+        <form class="hide" id="uploadForm">
+          <input
+            class="hide"
+            type="file"
+            id="fileInput"
+            accept="audio/*"
+            required
+          />
+          <button
+            class="hide"
+            type="button"
+            id="playButton"
+            onclick="loadFile()"
+          >
+            Load Song
+          </button>
+          <button
+            class="hide"
+            type="button"
+            id="addFileButton"
+            onclick="fileInput.click()"
+          >
+            Add Another File
+          </button>
+        </form>
+
+        <!-- File List -->
+        <div class="hide" id="fileList"></div>
+
+        <!-- Audio Player -->
+        <div class="hide" id="playerContainer" style="display: none">
+          <h3>Now Playing:</h3>
+          <audio id="audioPlayer" style="width: 100%"></audio>
+
+          <!-- Custom Seek Bar -->
+          <div id="seekBarContainer">
+            <div id="progressBar"></div>
+            <div
+              class="marker"
+              mousedown="mousedownstart()"
+              id="startMarker"
+            ></div>
+            <div class="marker" mousedown="mousedownend()" id="endMarker"></div>
+          </div>
+
+          <!-- Play/Pause Button -->
+          <button id="playPauseButton">Play</button>
+
+          <!-- Time Display -->
+          <p id="timeDisplay">00:00 / 00:00</p>
+
+          <!-- Interval Display -->
+          <p id="intervalDisplay">Interval: 00:00 - 00:30</p>
+        </div>
+
+        <p id="message" style="color: white"></p>
+        <p id="finalmessage" style="color: white"></p>
+        <p id="finaloutput" style="color: white"></p>
+        <!-- <img id="imagehandshake" src="handshake.png" alt="handshake" /> -->
+        <button id="button" onclick="nextfunction()">Next</button>
+        <button id="anotherbutton" onclick="anothersongfunction()">
+          Another Song
+        </button>
+        <button id="tempbutton">Temp</button>
+        <img id="tempimg" src="/robo/handshake.png" alt="handshake" />
+      </div>
+    </div>
+    <script>
+      text = [
+        "I'm your Voting assistant.",
+        "Kindly insert your song here.",
+        "Well,let me analyze it for you.",
+        "       Yayy it's a classical song.",
+      ];
+      h1text = "Hello👋 ";
+      elementh1 = document.getElementsByTagName("h1")[0];
+      element = document.getElementsByTagName("h2")[0];
+      elementhiding = document.getElementsByClassName("hide");
+      buttonelement = document.getElementById("button");
+      video = document.getElementById("videoid");
+      videoContainer = document.getElementsByClassName("video-container")[0];
+      anotherelement = document.getElementById("anotherbutton");
+      clipExtractButton = document.getElementsByTagName(".clipButton");
+      tempButton = document.getElementById("tempbutton");
+      tempimg = document.getElementById("tempimg");
+
+      ctr = 0;
+      i = 0;
+      nextfunction();
+
+      function nextfunction() {
+        element.innerHTML = "";
+        if (ctr == 0) {
+          ctrfunction1();
+        } else if (ctr == 1) {
+          ctrfunction2();
+        } else if (ctr == 2) {
+          ctrfunction3();
+        } else if (ctr == 3) {
+          ctrfunction4();
+        } else {
+          ctrfunction5();
+        }
+
+        const interval = setInterval(function () {
+          if (i < text[ctr - 1].length) {
+            element.innerHTML += text[ctr - 1][i];
+            i++;
+          }
+        }, 100);
+        ctr += 1;
+        i = 0;
+        // clearInterval(interval);
+      }
+      clearInterval(interval);
+      function ctrfunction5() {
+        //video.src = "/robo_videos/robo-hi.mp4";
+        //addFileButton.style.visibility = "hidden";
+        //anotherelement.style.visibility = "hidden";
+        //buttonelement.style.visibility = "hidden";
+        //fileItem.querySelector(".clipButton").style.visibility = "hidden";
+        //tempButton.style.visibility = "visible";
+        //tempButton.style.backgroundColor = "yellow";
+        //tempimg.style.visibility = "visible";
+        breakPage();
+      }
+      function ctrfunction4() {
+        elementh1.style.visibility = "hidden";
+        video.src = "/robo_videos/robo-hurray.mp4";
+        for (let i = 0; i < elementhiding.length; i++) {
+          elementhiding[i].style.visibility = "hidden";
+        }
+        //buttonelement.style.visibility = "hidden";
+        playButton.style.visibility = "hidden";
+        addFileButton.style.visibility = "hidden";
+        videoContainer.style.animation = "none";
+        element.style.position = "absolute";
+        buttonelement.style.visibility = "visible";
+        buttonelement.innerText = "Finish";
+        anotherelement.style.visibility = "visible";
+        i=0;
+        element.innerHTML = "";
+        const interval = setInterval(function () {
+          if (i < text[ctr - 1].length) {
+            element.innerHTML += text[ctr - 1][i];
+            i++;
+          }
+        }, 100);
+        ctr += 1;
+      }
+      function ctrfunction3() {
+        element.style.top = "300px";
+        buttonelement.innerText = "Next";
+        buttonelement.click();
+        addFileButton.style.visibility = "hidden";
+        elementh1.style.visibility = "hidden";
+        for (let i = 0; i < elementhiding.length; i++) {
+          elementhiding[i].style.visibility = "hidden";
+        }
+        playButton.style.visibility = "hidden";
+        video.src = "/robo_videos/robo-thinking-final.mp4";
+        videoContainer.style.animation = "none";
+        element.style.position = "absolute";
+        buttonelement.style.visibility = "visible";
+        anotherelement.style.visibility = "hidden";
+      }
+      function ctrfunction2() {
+        buttonelement.style.visibility = "hidden";
+        //extractButton.style.backgroundColor="red";
+        elementh1.style.visibility = "hidden";
+        for (let i = 0; i < elementhiding.length; i++) {
+          elementhiding[i].style.visibility = "visible";
+        }
+        playButton.style.visibility = "visible";
+        addFileButton.style.visibility = "hidden";
+        video.src = "/robo_videos/robo-turing-right-final.mp4";
+        videoContainer.style.animation = "none";
+        anotherelement.style.visibility = "hidden";
+      }
+      function ctrfunction1() {
+        elementh1.innerHTML = h1text;
+        video.src = "/robo_videos/robo-walking-in.mp4";
+        anotherelement.style.visibility = "hidden";
+      }
+      function anothersongfunction() {
+        ctr = 1;
+        nextfunction();
+        element.style.position = "fixed";
+        element.style.top = "160px";
+      }
+
+      function breakPage() {
+        const content = document.body; // Entire page
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const blockSize = 50;
+
+        // Hide the original content
+        document.getElementById("content").style.display = "none";
+
+        // Create blocks
+        for (let x = 0; x < width; x += blockSize) {
+          for (let y = 0; y < height; y += blockSize) {
+            const block = document.createElement("div");
+            block.className = "block";
+            block.style.left = `${x}px`;
+            block.style.top = `${y}px`;
+
+            // Randomized flight directions and rotation
+            const dx = (Math.random() - 0.5) * 2000; // Random x displacement
+            const dy = (Math.random() - 0.5) * 2000; // Random y displacement
+            const rot = Math.random() * 720 - 360; // Random rotation
+
+            block.style.setProperty("--dx", `${dx}px`);
+            block.style.setProperty("--dy", `${dy}px`);
+            block.style.setProperty("--rot", `${rot}deg`);
+
+            block.style.animation = `fly-away 2s ease-out forwards`;
+            content.appendChild(block);
+
+            // Remove the block after animation
+            setTimeout(() => block.remove(), 2000);
+          }
+        }
+      }
+    </script>
+    <script src="tasktemp.js"></script>
+  </body>
+</html>

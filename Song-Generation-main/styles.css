@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+body {
+  background-color: #0d1117;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+button {
+  background-color: rgba(99, 79, 79, 0);
+  color: white;
+}
+.container {
+  /* margin-left: 15px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  /* position: absolute; */
+  z-index: 2;
+  margin: 25px;
+  margin-left: 150px;
+  color: white;
+  width: 35ch;
+  /* word-wrap: break-word; */
+  white-space: normal;
+}
+h1 {
+  z-index: 2;
+  /* position: absolute; */
+  margin-left: 60px;
+  color: white;
+}
+#button {
+  margin-top: 15px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: visible;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 200px;
+  right: 400px;
+  z-index: 5;
+}
+#imageid {
+  width: 200px;
+  height: 300px;
+}
+#imagehandshake {
+  width: 150px;
+  height: 100px;
+}
+#videoid {
+  width: 700px;
+  height: 800px;
+}
+#uploadForm {
+  background-color: rgba(99, 79, 79, 0);
+  color: white;
+}
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+  } */
+#playButton {
+  visibility: hidden;
+}
+#playerContainer {
+  margin-top: 20px;
+}
+#seekBarContainer {
+  position: relative;
+  width: 500px;
+  height: 20px;
+  margin: 20px auto;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  /* cursor: pointer; */
+}
+#progressBar {
+  position: absolute;
+  height: 100%;
+  background-color: #007bff;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.marker {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: black;
+  cursor: pointer;
+}
+#timeDisplay {
+  font-size: 1rem;
+  margin: 5px;
+}
+#intervalDisplay {
+  margin: 10px;
+  font-weight: bold;
+}
+#playPauseButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#playPauseButton:hover {
+  background-color: #0056b3;
+}
+#fileList {
+  margin-top: 20px;
+  text-align: left;
+}
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.clipButton {
+  padding: 5px 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.clipButton:hover {
+  background-color: darkgreen;
+}
+.hide {
+  /* display: none; */
+  visibility: hidden;
+}
+/* #seekBarContainer {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  
+  #progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.1s;
+  }
+  
+  .marker {
+    position: absolute;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: red;
+    cursor: pointer;
+  } */
+#progessbar {
+  width: 300px;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Background for better visibility */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Video Container */
+.video-container {
+  z-index: 0;
+  position: absolute;
+  margin-right: 70px;
+  width: 30%; /* Adjust based on video size */
+  top: 50%; /* Start vertically centered */
+  transform: translateY(-50%) translateX(-100%); /* Start offscreen (left) */
+  animation: walkIn 6s forwards; /* Animation applied here */
+}
+
+/* Keyframes for the video movement */
+@keyframes walkIn {
+  0% {
+    transform: translateY(-50%) translateX(-200%); /* Start off-screen left */
+  }
+  100% {
+    transform: translateY(-50%) translateX(-80%); /* End at the center */
+  }
+}
+.clipButton {
+  /* background-color: white;
+  color: black;
+  position: fixed;
+  /* top: 500px;
+  left: 800px; */
+  /* bottom: 225px; */
+  /* //right: 400px;  */
+  margin-top: 15px;
+  background-color: white;
+  z-index: 1;
+  color: red;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: visible;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 225px;
+  right: 400px;
+}
+#addFileButton
+{
+  margin-top: 15px;
+  background-color: yellow;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 225px;
+  right: 500px;
+}
+#anotherbutton{
+  margin-top: 15px;
+  background-color: white;
+  color: red;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 225px;
+  right: 500px;
+}
+#tempbutton{
+  margin-top: 15px;
+  background-color: white;
+  color: yellow;
+  z-index: 10;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 225px;
+  right: 400px;
+}
+#tempimg{
+  visibility: hidden;
+  height: 70px;
+  width: 100px;
+  position: fixed;
+  bottom:215px;
+  right: 372px;
+  z-index: 10;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  /* background-color: #282c34; */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  text-align: center;
+}
+
+/* button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #61dafb;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+
+/* button:hover {
+  background-color: #21a1f1;
+} */
+
+.block {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+@keyframes fly-away {
+  to {
+    transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--rot, 0deg));
+    opacity: 0;
+  }
+}

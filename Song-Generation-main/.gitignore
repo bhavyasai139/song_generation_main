@@ -1,0 +1,56 @@
+# ====================================
+# Folders to ignore
+# ====================================
+
+robo/
+robo_videos/
+uploads/
+
+# ====================================
+# File types to ignore
+# ====================================
+
+# Temp audio/video
+*.wav
+*.mp3
+*.mp4
+*.m4a
+*.ogg
+
+# Dataset / large audio file specifically mentioned
+03 - Raagam Thanam Pallavi - SenSongs* 
+
+# Temporary files
+temp.*
+*.tmp
+
+# Python temp
+__pycache__/
+*.pyc
+
+# Node dependencies (if any)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# ====================================
+# Optional: exclude model weights
+# ====================================
+*.h5
+*.pt
+*.ckpt
+*.bin
+*.model
