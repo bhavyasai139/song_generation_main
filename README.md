@@ -1,12 +1,14 @@
-# 🎵 AI Song Generation & Voice Synthesis Platform
+# AI Song Generation & Voice Synthesis Platform
 
-An end-to-end multimodal AI system that transforms voice input into complete songs by combining emotion recognition, lyric generation, neural voice synthesis, and AI-generated background music.
+## Overview
 
-The project integrates Deep Learning, Audio Processing, NLP, and Generative AI models to create emotion-aware musical experiences.
+AI Song Generation & Voice Synthesis Platform is a multimodal AI system that transforms voice input into complete songs by combining emotion recognition, lyric generation, neural voice synthesis, and AI-generated background music.
+
+The project integrates Deep Learning, Audio Processing, Natural Language Processing, and Generative AI models to create emotion-aware musical experiences.
 
 ---
 
-## 🚀 Features
+## Features
 
 * Emotion Detection from speech input
 * AI-based Lyric Generation
@@ -19,27 +21,41 @@ The project integrates Deep Learning, Audio Processing, NLP, and Generative AI m
 
 ---
 
-## 🏗 System Workflow
+## System Workflow
 
 Voice Input
+
 ↓
+
 Audio Feature Extraction (MFCCs, Spectrograms)
+
 ↓
+
 Emotion Recognition
+
 ↓
+
 Emotion-Based Lyric Generation
+
 ↓
+
 Bark Voice Synthesis
+
 ↓
+
 MusicGen Background Music Generation
+
 ↓
-Audio Enhancement & Mixing
+
+Audio Enhancement and Mixing
+
 ↓
+
 Final Song Output
 
 ---
 
-## 🧠 AI Components
+## AI Components
 
 ### Emotion Recognition
 
@@ -69,7 +85,7 @@ Final Song Output
 
 ---
 
-## 🛠 Tech Stack
+## Technology Stack
 
 ### Programming Language
 
@@ -99,7 +115,7 @@ Final Song Output
 
 ---
 
-## 📊 Results
+## Results
 
 * Achieved approximately 85% emotion classification accuracy.
 * Generated synchronized lyrics, vocals, and background music.
@@ -107,12 +123,13 @@ Final Song Output
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### Clone Repository
 
 ```bash
 git clone https://github.com/bhavyasai139/song_generation_main.git
+
 cd song_generation_main
 ```
 
@@ -130,7 +147,7 @@ python main.py
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 * Real-time song generation
 * Multi-language lyric generation
@@ -140,16 +157,16 @@ python main.py
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Gadikota Bhavya Sai**
+Gadikota Bhavya Sai
 
-📧 Email: [bhavyasaigadikota746@gmail.com](mailto:bhavyasaigadikota746@gmail.com)
+GitHub:
+https://github.com/bhavyasai139
 
-💻 GitHub: https://github.com/bhavyasai139
+LinkedIn:
+https://www.linkedin.com/in/gadikota-bhavya-sai
 
-🔗 LinkedIn: https://www.linkedin.com/in/gadikota-bhavya-sai
+Email:
+[bhavyasaigadikota746@gmail.com](mailto:bhavyasaigadikota746@gmail.com)
 
----
-
-⭐ If you found this project interesting, consider giving it a star.
